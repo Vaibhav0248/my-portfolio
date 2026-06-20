@@ -39,11 +39,17 @@ const Contact = () => {
     // EmailJS Integration
     // Recruiter-focused fallback logic: If Service/Template keys are not configured yet,
     // simulate a successful message send so the UI can be fully tested.
-    const serviceId = 'YOUR_EMAILJS_SERVICE_ID';
-    const templateId = 'YOUR_EMAILJS_TEMPLATE_ID';
-    const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY';
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_EMAILJS_SERVICE_ID';
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_EMAILJS_TEMPLATE_ID';
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_EMAILJS_PUBLIC_KEY';
 
-    if (serviceId === 'YOUR_EMAILJS_SERVICE_ID' || templateId === 'YOUR_EMAILJS_TEMPLATE_ID') {
+    if (
+      serviceId === 'YOUR_EMAILJS_SERVICE_ID' ||
+      templateId === 'YOUR_EMAILJS_TEMPLATE_ID' ||
+      !serviceId ||
+      !templateId ||
+      !publicKey
+    ) {
       // Simulation mode
       setTimeout(() => {
         setLoading(false);

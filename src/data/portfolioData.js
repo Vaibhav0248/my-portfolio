@@ -1,7 +1,7 @@
 export const portfolioData = {
   personalDetails: {
     name: "Vaibhav Jadhav",
-    title: "Java Full Stack Developer",
+    title: "Software Engineer | Java Full Stack",
     email: "vaibhavjadhav0248@gmail.com",
     phone: "+919359437626",
     location: "Chhatrapati Sambhaji Nagar, Maharashtra, India",
@@ -23,7 +23,7 @@ export const portfolioData = {
       institution: "Late Pundlikrao Patil High School, Mohra",
       degree: "Higher Secondary (11th & 12th)",
       period: "2020 - 2022",
-      metric: "Percentage: 79.84%",
+      metric: "Percentage: 79.83%",
       details: "Board: Maharashtra State Board. Specialized in Science and Mathematics."
     },
     {
