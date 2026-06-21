@@ -46,24 +46,6 @@ export const portfolioData = {
       ]
     },
     {
-      category: "Core & Advanced Java",
-      items: [
-        { name: "OOP (Object-Oriented Programming)", level: 90 },
-        { name: "Collections Framework", level: 90 },
-        { name: "Multithreading & Concurrency", level: 80 },
-        { name: "Exception Handling", level: 85 },
-        { name: "JDBC (Java Database Connectivity)", level: 85 }
-      ]
-    },
-    {
-      category: "Java 8+ Features",
-      items: [
-        { name: "Lambdas & Streams API", level: 85 },
-        { name: "Functional Interfaces", level: 85 },
-        { name: "Optional Class & Utilities", level: 80 }
-      ]
-    },
-    {
       category: "Frameworks & Tools",
       items: [
         { name: "Spring Boot", level: 85 },
@@ -73,20 +55,9 @@ export const portfolioData = {
       ]
     },
     {
-      category: "Tools & Databases",
+      category: "Databases",
       items: [
-        { name: "MySQL", level: 85 },
-        { name: "Hibernate (ORM)", level: 80 },
-        { name: "Thymeleaf", level: 80 },
-        { name: "JavaFX", level: 75 }
-      ]
-    },
-    {
-      category: "Other Core Competencies",
-      items: [
-        { name: "Problem-Solving", level: 90 },
-        { name: "Team Collaboration", level: 85 },
-        { name: "Git & Version Control", level: 80 }
+        { name: "MySQL", level: 85 }
       ]
     }
   ],

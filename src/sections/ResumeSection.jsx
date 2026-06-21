@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, FileText, Terminal, Check } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import resumePreview from '../assets/resume_preview.png';
 
 const ResumeSection = () => {
   const { resumeUrl } = portfolioData.personalDetails;
@@ -14,7 +13,7 @@ const ResumeSection = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col items-start mb-12 text-left">
+        <div className="flex flex-col items-center mb-12 text-center">
           <div className="font-mono text-cyanAccent text-sm mb-2 font-semibold flex items-center gap-2">
             <span>&lt;section id="resume"&gt;</span>
           </div>
@@ -25,73 +24,46 @@ const ResumeSection = () => {
         </div>
 
         {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Side: Mockup Preview */}
+        <div className="max-w-3xl mx-auto">
           <motion.div 
-            className="lg:col-span-6 flex justify-center"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            className="bg-card p-8 md:p-12 rounded-3xl border border-accent/10 hover:border-accent/20 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-300 text-center flex flex-col items-center space-y-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <div className="relative group max-w-md w-full aspect-[1/1.414] bg-card rounded-2xl p-4 border border-accent/20 hover:border-cyanAccent/50 transition-colors shadow-2xl overflow-hidden">
-              {/* Glow overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10 pointer-events-none" />
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent to-cyanAccent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 z-20" />
-              
-              {/* Image preview */}
-              <div className="w-full h-full rounded-xl overflow-hidden relative bg-secondary">
-                <img 
-                  src={resumePreview} 
-                  alt="Vaibhav Jadhav Resume Preview" 
-                  className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
-
-              {/* Coding tag overlays */}
-              <div className="absolute bottom-6 left-6 right-6 z-20 flex justify-between items-center bg-primary/95 backdrop-blur px-4 py-3 rounded-xl border border-accent/15">
-                <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-cyanAccent" />
-                  <span className="font-mono text-xs text-textWhite font-semibold">VAIBHAV_JADHAV_CV.pdf</span>
-                </div>
-                <span className="font-mono text-[10px] text-accent font-bold">READY</span>
-              </div>
+            {/* Elegant Icon Header */}
+            <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20">
+              <FileText className="w-8 h-8" />
             </div>
-          </motion.div>
 
-          {/* Right Side: Download Details */}
-          <motion.div 
-            className="lg:col-span-6 text-left space-y-6"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h3 className="text-2xl font-bold text-textWhite">
-              Recruiter-Friendly Resume Format
-            </h3>
-            <p className="text-textGray leading-relaxed text-sm md:text-base">
-              Need a copy of my curriculum vitae for internal forwarding or screening databases? Download the formal PDF version containing my academic records, verified CGPA details, professional internship contributions, and detailed project frameworks.
-            </p>
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-textWhite">
+                Recruiter-Friendly Resume Format
+              </h3>
+              <p className="text-textGray leading-relaxed text-sm md:text-base max-w-xl mx-auto">
+                Need a copy of my curriculum vitae for internal forwarding or screening databases? Download the formal PDF version containing my academic records, verified CGPA details, professional internship contributions, and detailed project frameworks.
+              </p>
+            </div>
 
-            <div className="space-y-3 font-mono text-xs text-textGray">
+            {/* Checklist */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center font-mono text-xs text-textGray">
               <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-green-400" />
-                <span>One-click PDF download links</span>
+                <Check className="w-4 h-4 text-green-400 shrink-0" />
+                <span>One-click PDF download</span>
               </div>
               <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-green-400" />
-                <span>Fully parsable ATS-friendly schema structure</span>
+                <Check className="w-4 h-4 text-green-400 shrink-0" />
+                <span>ATS-friendly schema</span>
               </div>
               <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-green-400" />
-                <span>Up-to-date with recent internship & project descriptions</span>
+                <Check className="w-4 h-4 text-green-400 shrink-0" />
+                <span>Up-to-date details</span>
               </div>
             </div>
 
             {/* Large Download Button */}
-            <div className="pt-4">
+            <div className="pt-2">
               <a
                 href={resumeUrl}
                 download="VAIBHAV_JADHAV_CV.pdf"
@@ -102,15 +74,19 @@ const ResumeSection = () => {
               </a>
             </div>
 
-            <div className="pt-4 border-t border-accent/10 font-mono text-xs text-textGray/60 flex items-center gap-1.5">
-              <Terminal className="w-3.5 h-3.5 text-cyanAccent" />
-              <span>wget {window.location.origin || 'http://localhost:5173'}{resumeUrl}</span>
+            {/* Terminal Snip */}
+            <div className="w-full max-w-lg bg-secondary/80 rounded-xl p-4 border border-accent/5 font-mono text-xs text-textGray/60 flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-none">
+                <Terminal className="w-4 h-4 text-cyanAccent shrink-0" />
+                <span className="text-left">wget {window.location.origin || 'http://localhost:5173'}{resumeUrl}</span>
+              </div>
+              <span className="text-[10px] text-accent font-bold uppercase shrink-0">PDF</span>
             </div>
-          </motion.div>
 
+          </motion.div>
         </div>
 
-        <div className="flex justify-start font-mono text-cyanAccent text-sm mt-8">
+        <div className="flex justify-center font-mono text-cyanAccent text-sm mt-8">
           <span>&lt;/section&gt;</span>
         </div>
 
