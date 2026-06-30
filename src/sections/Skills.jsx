@@ -9,22 +9,22 @@ import { SiSpringboot, SiSpring, SiMysql, SiOpenai } from 'react-icons/si';
 // Helper to map skill names to react-icons
 const getSkillIcon = (name) => {
   const n = name.toLowerCase();
-  if (n.includes('springboot') || n.includes('spring boot')) return <SiSpringboot className="w-5 h-5 text-[#6DB33F]" />;
-  if (n.includes('spring')) return <SiSpring className="w-5 h-5 text-[#6DB33F]" />;
-  if (n.includes('java (core') || n === 'java') return <FaJava className="w-5 h-5 text-[#007396]" />;
-  if (n.includes('javascript') || n === 'js') return <FaJs className="w-5 h-5 text-[#F7DF1E]" />;
-  if (n === 'sql') return <FaDatabase className="w-5 h-5 text-[#00758F]" />;
-  if (n === 'mysql') return <SiMysql className="w-5 h-5 text-[#4479A1]" />;
-  if (n === 'html') return <FaHtml5 className="w-5 h-5 text-[#E34F26]" />;
-  if (n === 'css') return <FaCss3Alt className="w-5 h-5 text-[#1572B6]" />;
-  if (n === 'react') return <FaReact className="w-5 h-5 text-[#61DAFB]" />;
-  if (n.includes('oop')) return <FaProjectDiagram className="w-5 h-5 text-[#3B82F6]" />;
-  if (n.includes('concurrency') || n.includes('multithreading')) return <FaCogs className="w-5 h-5 text-[#06B6D4]" />;
-  if (n.includes('lambdas') || n.includes('streams') || n.includes('java 8+')) return <FaCode className="w-5 h-5 text-[#3B82F6]" />;
-  if (n.includes('api') || n.includes('rest')) return <FaServer className="w-5 h-5 text-[#06B6D4]" />;
-  if (n.includes('git')) return <FaGitAlt className="w-5 h-5 text-[#F05032]" />;
-  if (n.includes('collaboration') || n.includes('team')) return <FaUsers className="w-5 h-5 text-[#06B6D4]" />;
-  return <FaCode className="w-5 h-5 text-[#94A3B8]" />;
+  if (n.includes('springboot') || n.includes('spring boot')) return <SiSpringboot className="w-8 h-8 text-[#6DB33F]" />;
+  if (n.includes('spring')) return <SiSpring className="w-8 h-8 text-[#6DB33F]" />;
+  if (n.includes('java (core') || n === 'java') return <FaJava className="w-8 h-8 text-[#007396]" />;
+  if (n.includes('javascript') || n === 'js') return <FaJs className="w-8 h-8 text-[#F7DF1E]" />;
+  if (n === 'sql') return <FaDatabase className="w-8 h-8 text-[#00758F]" />;
+  if (n === 'mysql') return <SiMysql className="w-8 h-8 text-[#4479A1]" />;
+  if (n === 'html') return <FaHtml5 className="w-8 h-8 text-[#E34F26]" />;
+  if (n === 'css') return <FaCss3Alt className="w-8 h-8 text-[#1572B6]" />;
+  if (n === 'react') return <FaReact className="w-8 h-8 text-[#61DAFB]" />;
+  if (n.includes('oop')) return <FaProjectDiagram className="w-8 h-8 text-[#3B82F6]" />;
+  if (n.includes('concurrency') || n.includes('multithreading')) return <FaCogs className="w-8 h-8 text-[#06B6D4]" />;
+  if (n.includes('lambdas') || n.includes('streams') || n.includes('java 8+')) return <FaCode className="w-8 h-8 text-[#3B82F6]" />;
+  if (n.includes('api') || n.includes('rest')) return <FaServer className="w-8 h-8 text-[#06B6D4]" />;
+  if (n.includes('git')) return <FaGitAlt className="w-8 h-8 text-[#F05032]" />;
+  if (n.includes('collaboration') || n.includes('team')) return <FaUsers className="w-8 h-8 text-[#06B6D4]" />;
+  return <FaCode className="w-8 h-8 text-[#94A3B8]" />;
 };
 
 const Skills = () => {
@@ -44,7 +44,63 @@ const Skills = () => {
     visible: { 
       opacity: 1, 
       y: 0, 
-      transition: { type: 'spring', stiffness: 100, damping: 15 } 
+      transition: { 
+        type: 'spring', 
+        stiffness: 100, 
+        damping: 15,
+        staggerChildren: 0.08
+      } 
+    }
+  };
+
+  const skillItemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 15 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0,
+      transition: { 
+        type: 'spring', 
+        stiffness: 120, 
+        damping: 12 
+      }
+    }
+  };
+
+  const skillIconVariants = {
+    hidden: { scale: 1, rotate: 0 },
+    visible: { scale: 1, rotate: 0 },
+    hover: { 
+      scale: 1.15, 
+      rotate: 6,
+      transition: { type: 'spring', stiffness: 300, damping: 10 }
+    }
+  };
+
+  const skillTextVariants = {
+    hidden: { color: '#94A3B8' },
+    visible: { color: '#94A3B8' },
+    hover: { 
+      color: '#F8FAFC',
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const skillLevelVariants = {
+    hidden: { color: 'rgba(6, 182, 212, 0.4)' },
+    visible: { color: 'rgba(6, 182, 212, 0.4)' },
+    hover: { 
+      color: 'rgba(6, 182, 212, 1)',
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const skillGlowVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 0 },
+    hover: { 
+      opacity: 1,
+      transition: { duration: 0.3 }
     }
   };
 
@@ -87,27 +143,44 @@ const Skills = () => {
                 </span>
               </h3>
               
-              <div className="space-y-4 flex-1 flex flex-col justify-start">
+              <div className="grid grid-cols-2 gap-3 mt-2 flex-1 content-start">
                 {category.items.map((skill, idx) => (
-                  <div key={idx} className="space-y-2">
-                    <div className="flex items-center justify-between text-xs font-mono">
-                      <div className="flex items-center gap-2 text-textWhite font-semibold">
-                        {getSkillIcon(skill.name)}
-                        <span>{skill.name}</span>
-                      </div>
-                      <span className="text-cyanAccent">{skill.level}%</span>
-                    </div>
-                    {/* Progress Bar */}
-                    <div className="w-full h-1.5 bg-secondary rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-accent to-cyanAccent rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: 'easeOut', delay: idx * 0.1 }}
-                      />
-                    </div>
-                  </div>
+                  <motion.div
+                    key={idx}
+                    variants={skillItemVariants}
+                    whileHover="hover"
+                    className="relative bg-slate-900/40 p-4 rounded-xl border border-slate-700/40 hover:border-cyanAccent/40 hover:bg-slate-800/40 transition-all duration-300 flex flex-col items-center justify-center text-center cursor-pointer overflow-hidden backdrop-blur-sm"
+                  >
+                    {/* Background Hover Glow */}
+                    <motion.div 
+                      variants={skillGlowVariants}
+                      className="absolute inset-0 bg-gradient-to-br from-transparent to-cyanAccent/5 pointer-events-none" 
+                    />
+
+                    {/* Subtle Percent Indicator */}
+                    <motion.span 
+                      variants={skillLevelVariants}
+                      className="absolute top-2 right-2 text-[9px] font-mono"
+                    >
+                      {skill.level}%
+                    </motion.span>
+
+                    {/* Animated Icon */}
+                    <motion.div 
+                      variants={skillIconVariants}
+                      className="text-textWhite mb-2"
+                    >
+                      {getSkillIcon(skill.name)}
+                    </motion.div>
+
+                    {/* Skill Name */}
+                    <motion.span 
+                      variants={skillTextVariants}
+                      className="text-xs font-mono break-words w-full px-1"
+                    >
+                      {skill.name}
+                    </motion.span>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

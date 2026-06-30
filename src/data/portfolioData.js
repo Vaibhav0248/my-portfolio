@@ -89,7 +89,7 @@ export const portfolioData = {
       ],
       challenges: "Handling complex natural language expressions that contain multi-table relations and ensuring the AI output is clean SQL without markdown blocks.",
       contribution: "Designed and built the entire core backend, database connectivity modules, and JavaFX layout views. Structured OpenAI API calls and system prompts to guarantee stable SQL code generation.",
-      github: "https://github.com/Vaibhav0248"
+      github: "https://github.com/Vaibhav0248/mydb-ai-powered-db-manager"
     },
     {
       title: "Hospital Management System",
@@ -104,7 +104,7 @@ export const portfolioData = {
       ],
       challenges: "Preventing double-booking appointments when two requests occur simultaneously, resolved by database constraints and service-level synchronization.",
       contribution: "Architected the database schema, designed the entity relationships with Hibernate, programmed the Spring Boot security filters, and coded the controllers and billing calculations.",
-      github: "https://github.com/Vaibhav0248"
+      github: "https://github.com/Vaibhav0248/HospitalManagementSystem"
     },
     {
       title: "Bookify – A Book Management Platform",
@@ -118,7 +118,7 @@ export const portfolioData = {
       ],
       challenges: "Managing latency and UI consistency during direct-to-cloud cover uploads, solved by client-side image compression and loading skeletons.",
       contribution: "Configured Firebase backend endpoints, structured Context providers for books collections state, and developed the image transformation and upload workflows.",
-      github: "https://github.com/Vaibhav0248"
+      github: "https://github.com/Vaibhav0248/Bookify"
     }
   ],
   certifications: [
