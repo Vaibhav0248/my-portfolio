@@ -86,15 +86,6 @@ const Skills = () => {
     }
   };
 
-  const skillLevelVariants = {
-    hidden: { color: 'rgba(6, 182, 212, 0.4)' },
-    visible: { color: 'rgba(6, 182, 212, 0.4)' },
-    hover: { 
-      color: 'rgba(6, 182, 212, 1)',
-      transition: { duration: 0.2 }
-    }
-  };
-
   const skillGlowVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 0 },
@@ -156,14 +147,6 @@ const Skills = () => {
                       variants={skillGlowVariants}
                       className="absolute inset-0 bg-gradient-to-br from-transparent to-cyanAccent/5 pointer-events-none" 
                     />
-
-                    {/* Subtle Percent Indicator */}
-                    <motion.span 
-                      variants={skillLevelVariants}
-                      className="absolute top-2 right-2 text-[9px] font-mono"
-                    >
-                      {skill.level}%
-                    </motion.span>
 
                     {/* Animated Icon */}
                     <motion.div 
