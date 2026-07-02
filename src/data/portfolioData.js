@@ -89,7 +89,8 @@ export const portfolioData = {
       ],
       challenges: "Handling complex natural language expressions that contain multi-table relations and ensuring the AI output is clean SQL without markdown blocks.",
       contribution: "Designed and built the entire core backend, database connectivity modules, and JavaFX layout views. Structured OpenAI API calls and system prompts to guarantee stable SQL code generation.",
-      github: "https://github.com/Vaibhav0248/mydb-ai-powered-db-manager"
+      github: "https://github.com/Vaibhav0248/mydb-ai-powered-db-manager",
+      downloadUrl: "https://github.com/Vaibhav0248/mydb-ai-powered-db-manager/releases/download/v1.0.0/MyDB-1.0.0.exe"
     },
     {
       title: "Hospital Management System",

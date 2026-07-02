@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Terminal, ShieldAlert, CheckCircle, Database } from 'lucide-react';
+import { Github, ExternalLink, Terminal, ShieldAlert, CheckCircle, Database, Download } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const Projects = () => {
@@ -88,7 +88,7 @@ const Projects = () => {
                   </div>
 
                   {/* Links */}
-                  <div className="flex items-center gap-4 pt-4 border-t border-accent/10">
+                  <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-accent/10">
                     <a
                       href={project.github}
                       target="_blank"
@@ -98,6 +98,16 @@ const Projects = () => {
                       <Github className="w-4 h-4" />
                       <span>Source Code</span>
                     </a>
+                    {project.downloadUrl && (
+                      <a
+                        href={project.downloadUrl}
+                        download
+                        className="px-5 py-2.5 rounded-xl bg-cyanAccent hover:bg-cyanAccent/90 text-primary font-bold font-mono text-sm transition-all flex items-center gap-2 shadow-lg shadow-cyanAccent/10 hover:shadow-cyanAccent/30 hover:-translate-y-0.5 duration-300"
+                      >
+                        <Download className="w-4.5 h-4.5" />
+                        <span>Install Software</span>
+                      </a>
+                    )}
                   </div>
                 </div>
 
