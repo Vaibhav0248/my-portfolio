@@ -7,7 +7,7 @@ export const portfolioData = {
     location: "Chhatrapati Sambhaji Nagar, Maharashtra, India",
     github: "https://github.com/Vaibhav0248",
     linkedin: "https://www.linkedin.com/in/vaibhav-jadhav-67984b292",
-    resumeUrl: "public/VAIBHAV_JADHAV_CV.pdf",
+    resumeUrl: `${import.meta.env.BASE_URL}VAIBHAV_JADHAV_CV.pdf`,
     shortIntro: "B.Tech Computer Science & Engineering student and Full Stack Developer with specialized expertise in Java, Spring Boot, and database management systems. Experience in building role-based web architectures, integrating AI into backend databases, and implementing enterprise security patterns.",
     careerObjective: "Detail-oriented and driven Computer Science & Engineering B.Tech student with a strong academic foundation (CGPA 9.10) seeking to leverage my Java Full Stack capabilities, backend development experience, and passion for problem-solving in a fast-paced software engineering team. Eager to contribute to building high-scale product applications and real-time backend systems."
   },
