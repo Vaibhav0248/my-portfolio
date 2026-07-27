@@ -170,17 +170,17 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, type: 'spring', stiffness: 80 }}
         >
-          <div className="relative group w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
             {/* Outer glow frames */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-accent to-cyanAccent rounded-3xl blur-md opacity-30 group-hover:opacity-60 transition-opacity duration-300" />
-            <div className="absolute -inset-1 bg-gradient-to-tr from-accent to-cyanAccent rounded-3xl opacity-10 group-hover:opacity-30 blur-xl transition-all duration-300 animate-pulse-subtle" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-accent to-cyanAccent rounded-3xl blur-md opacity-30" />
+            <div className="absolute -inset-1 bg-gradient-to-tr from-accent to-cyanAccent rounded-3xl opacity-10 blur-xl animate-pulse-subtle" />
             
             {/* Image frame container */}
-            <div className="absolute inset-0 bg-card rounded-3xl overflow-hidden border-2 border-accent/20 group-hover:border-cyanAccent/50 transition-colors duration-300">
+            <div className="absolute inset-0 bg-card rounded-3xl overflow-hidden border-2 border-accent/20">
               <img 
                 src={profileImg} 
                 alt="Vaibhav Jadhav" 
-                className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500 hover:scale-105"
+                className="w-full h-full object-cover"
               />
             </div>
             
